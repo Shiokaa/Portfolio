@@ -15,7 +15,7 @@ export default function Hero() {
               Je suis <span className="text-teal-500">AMARU TOM</span>
             </p>
             <br />
-            <div className="text-3xl">
+            <div className="text-2xl md:text-3xl lg:text-3xl">
               <Typewriter
                 options={{
                   strings: [
@@ -35,9 +35,11 @@ export default function Hero() {
           <Image
             src="/images/hero.jpg"
             alt="hero"
-            width={250}
-            height={250}
-            className="rounded-2xl relative z-10 lg:w-[300px] lg:h-[320px]"
+            width={600}
+            height={640}
+            quality={100}
+            priority
+            className="rounded-2xl relative z-10 w-[250px] h-[250px] lg:w-[300px] lg:h-[320px] object-cover"
           />
         </div>
       </div>
