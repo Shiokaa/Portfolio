@@ -15,7 +15,7 @@ export default function Hero() {
               Je suis <span className="text-teal-500">AMARU TOM</span>
             </p>
             <br />
-            <p>
+            <div className="text-3xl">
               <Typewriter
                 options={{
                   strings: [
@@ -27,7 +27,7 @@ export default function Hero() {
                   loop: true,
                 }}
               />
-            </p>
+            </div>
           </div>
         </div>
         <div className="w-full h-1/2 flex items-center justify-center relative lg:h-full">
