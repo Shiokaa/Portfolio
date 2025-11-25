@@ -13,7 +13,7 @@ export default function Header() {
     <header className="w-full">
       <nav
         className={`h-16 w-full fixed top-0 left-0 z-50 py-10 flex items-center justify-around transition-all ease-out duration-300 ${
-          isOpen ? "bg-black/50" : ""
+          isOpen ? "bg-black" : ""
         }`}
       >
         <a href="">
@@ -21,7 +21,7 @@ export default function Header() {
         </a>
         <button
           onClick={handleClick}
-          className="flex flex-col gap-1.5 md:hidden lg:hidden"
+          className="flex flex-col gap-1.5 lg:hidden"
         >
           <span
             className={`bg-white block h-0.5 w-6 rounded-sm transition-all ease-out duration-300 ${
@@ -40,8 +40,8 @@ export default function Header() {
           ></span>
         </button>
         <ul
-          className={`fixed top-20 left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden md:hidden lg:hidden ${
-            isOpen ? "h-48 bg-black/50" : "h-0"
+          className={`fixed top-20 left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden lg:hidden ${
+            isOpen ? "h-48 bg-black" : "h-0"
           }`}
         >
           <li>
@@ -67,7 +67,7 @@ export default function Header() {
           </li>
         </ul>
 
-        <ul className="hidden md:flex lg:flex gap-18 items-center justify-center">
+        <ul className="hidden lg:flex gap-18 items-center justify-center">
           <li>
             <Link
               href=""
