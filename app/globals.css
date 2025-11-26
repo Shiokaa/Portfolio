@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
 body {
-  @apply h-screen w-screen;
+  @apply min-h-screen w-full;
   font-family: var(--font-poppins);
   background-color: #00bfa6;
-  background: center/cover no-repeat url("../public/background/bg.png");
-  backdrop-filter: blur(15px);
-  overflow: hidden;
   color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: center/cover no-repeat url("../public/background/bg.png");
+  filter: blur(15px);
+  scale: 1.1;
 }
 
 h2 {
@@ -21,6 +33,12 @@ p {
 a {
   text-decoration: none;
   @apply text-xl;
+}
+
+@layer components {
+  .burger-line {
+    @apply bg-white block h-0.5 w-6 rounded-sm transition-all ease-out duration-300;
+  }
 }
 
 @theme {
