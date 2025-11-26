@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,22 +47,30 @@ export default function Header() {
         >
           <li>
             <Link href="" className="flex items-center gap-2 ">
-              <img src="svg/home.svg" alt="home" /> Accueil
+              <Image src="svg/home.svg" alt="home" width={24} height={24} />
+              Accueil
             </Link>
           </li>
           <li>
             <Link href="" className="flex items-center gap-2">
-              <img src="svg/about.svg" alt="about" /> À propos
+              <Image src="svg/about.svg" alt="about" width={24} height={24} /> À
+              propos
             </Link>
           </li>
           <li>
             <Link href="" className="flex items-center gap-2">
-              <img src="svg/project.svg" alt="projects" /> Projets
+              <Image
+                src="svg/project.svg"
+                alt="projects"
+                width={24}
+                height={24}
+              />
+              Projets
             </Link>
           </li>
           <li>
             <Link href="" className="flex items-center gap-2">
-              <img src="svg/resume.svg" alt="resume" />
+              <Image src="svg/resume.svg" alt="resume" width={24} height={24} />
               CV
             </Link>
           </li>
@@ -73,7 +82,8 @@ export default function Header() {
               href=""
               className="flex items-center gap-2 group relative w-max"
             >
-              <img src="svg/home.svg" alt="home" /> Accueil
+              <Image src="svg/home.svg" alt="home" width={24} height={24} />
+              Accueil
               <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-300"></span>
             </Link>
           </li>
@@ -82,7 +92,8 @@ export default function Header() {
               href=""
               className="flex items-center gap-2 group relative w-max"
             >
-              <img src="svg/about.svg" alt="about" /> À propos
+              <Image src="svg/about.svg" alt="about" width={24} height={24} /> À
+              propos
               <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-300"></span>
             </Link>
           </li>
@@ -91,7 +102,13 @@ export default function Header() {
               href=""
               className="flex items-center gap-2 group relative w-max"
             >
-              <img src="svg/project.svg" alt="projects" /> Projets
+              <Image
+                src="svg/project.svg"
+                alt="projects"
+                width={24}
+                height={24}
+              />
+              Projets
               <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-300"></span>
             </Link>
           </li>
@@ -100,7 +117,8 @@ export default function Header() {
               href=""
               className="flex items-center gap-2 group relative w-max"
             >
-              <img src="svg/resume.svg" alt="resume" /> CV
+              <Image src="svg/resume.svg" alt="resume" width={24} height={24} />
+              CV
               <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-300"></span>
             </Link>
           </li>
