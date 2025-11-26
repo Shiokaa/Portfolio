@@ -1,5 +1,6 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+"use client";
+import Header from "../components/layout/Header";
+import Hero from "../components/home/Hero";
 
 export default function Home() {
   return (
