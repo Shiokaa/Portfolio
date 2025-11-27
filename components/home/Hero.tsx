@@ -4,16 +4,16 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-[calc(100vh-4rem)] flex items-center py-16 lg:px-20">
-      <div className="w-full h-full flex flex-col lg:flex-row gap-24 lg:gap-0">
+    <section className="hero w-full pt-20 lg:pt-50 flex items-center lg:px-20">
+      <div className="w-full h-full flex flex-col lg:flex-row gap-36 lg:gap-0">
         <div className="w-full h-1/2 flex flex-col items-center justify-center lg:h-full">
           <div className="flex gap-4 flex-col items-center lg:items-start lg:min-w-[550px]">
-            <h2>
+            <h1>
               Salut <span className="font-[Dancing_Script]">! 👋</span>
-            </h2>
-            <p>
+            </h1>
+            <h3>
               Je suis <span className="text-teal-500">AMARU TOM</span>
-            </p>
+            </h3>
             <br />
             <div className="text-2xl md:text-3xl lg:text-3xl">
               <Typewriter
