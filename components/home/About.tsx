@@ -25,7 +25,10 @@ const AboutText = [
 
 export default function About() {
   return (
-    <section className="about w-full h-full flex flex-col items-center justify-center">
+    <section
+      id="about"
+      className="about w-full h-full flex flex-col items-center justify-center"
+    >
       <div className="container mx-auto h-full w-[95%] lg:w-[75%] flex flex-col items-center justify-center gap-6 md:gap-10 lg:gap-16  py-10 px-10 rounded-3xl bg-black/20 shadow-black shadow-[0_0_60px_15px_rgba(0,0,0,0.3)]">
         <h2 className="border-l-4 border-teal-500 px-2">À propos de moi</h2>
         <div className="w-full lg:w-[80%] flex flex-col items-center justify-center gap-6 md:gap-10 lg:gap-10">
