@@ -3,15 +3,14 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
-import { MdOutlineWorkOutline } from "react-icons/md";
-import { MdOutlineContactPage } from "react-icons/md";
+import { MdOutlineWorkOutline, MdOutlineContactPage } from "react-icons/md";
 import { IconContext } from "react-icons";
 
 const navLinks = [
-  { name: "Accueil", href: "", icon: IoHomeOutline },
-  { name: "À propos", href: "", icon: FaRegUser },
-  { name: "Projets", href: "", icon: MdOutlineWorkOutline },
-  { name: "CV", href: "", icon: MdOutlineContactPage },
+  { name: "Accueil", href: "/", icon: IoHomeOutline },
+  { name: "À propos", href: "#about", icon: FaRegUser },
+  { name: "Projets", href: "#projects", icon: MdOutlineWorkOutline },
+  { name: "CV", href: "/resume", icon: MdOutlineContactPage },
 ];
 
 type NavItemsProps = {
