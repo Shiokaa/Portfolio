@@ -1,13 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { HomeIcon, FileUserIcon, FolderCodeIcon, UserIcon } from "lucide-react";
+import { IoHomeOutline } from "react-icons/io5";
+import { FaRegUser } from "react-icons/fa";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { MdOutlineContactPage } from "react-icons/md";
+import { IconContext } from "react-icons";
 
 const navLinks = [
-  { name: "Accueil", href: "", icon: HomeIcon },
-  { name: "À propos", href: "", icon: UserIcon },
-  { name: "Projets", href: "", icon: FolderCodeIcon },
-  { name: "CV", href: "", icon: FileUserIcon },
+  { name: "Accueil", href: "", icon: IoHomeOutline },
+  { name: "À propos", href: "", icon: FaRegUser },
+  { name: "Projets", href: "", icon: MdOutlineWorkOutline },
+  { name: "CV", href: "", icon: MdOutlineContactPage },
 ];
 
 type NavItemsProps = {
@@ -16,7 +20,7 @@ type NavItemsProps = {
 
 function NavItems({ mobile = true }: NavItemsProps) {
   return (
-    <>
+    <IconContext.Provider value={{ color: "white", size: "1.5rem" }}>
       {navLinks.map((link) => {
         const Icon = link.icon;
         return (
@@ -30,13 +34,13 @@ function NavItems({ mobile = true }: NavItemsProps) {
               <Icon></Icon>
               {link.name}
               {!mobile && (
-                <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-300"></span>
+                <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-500"></span>
               )}
             </Link>
           </li>
         );
       })}
-    </>
+    </IconContext.Provider>
   );
 }
 
@@ -58,16 +62,16 @@ export default function Header() {
   };
   return (
     <header
-      className={`w-full sticky top-0 left-0 z-50 transition-all ease-out duration-300 h-16 ${
+      className={`w-full sticky top-0 left-0 z-50 transition-all ease-out duration-300 h-18 lg:h-24 flex items-center justify-center ${
         isScrolled ? "bg-black backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <nav className="h-full w-full bg-black lg:bg-transparent py-10 flex items-center justify-around">
         {/* h1 qui fait office de logo */}
         <Link href="/">
-          <h1 className="text-5xl lg:text-6xl font-[Dancing_Script] text-teal-500">
+          <span className="text-5xl lg:text-6xl font-[Dancing_Script] text-teal-500">
             At.
-          </h1>
+          </span>
         </Link>
 
         {/* Bouton hamburger */}
@@ -93,8 +97,8 @@ export default function Header() {
 
         {/* Navbar mobile */}
         <ul
-          className={`absolute top-19 bg-black left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden lg:hidden ${
-            isOpen ? "h-48" : "h-0"
+          className={`absolute top-18 md:top-17 bg-black left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden lg:hidden ${
+            isOpen ? "h-48 " : "h-0"
           }`}
         >
           <NavItems mobile={true} />
