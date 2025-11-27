@@ -32,16 +32,18 @@ export default function About() {
       <div className="container mx-auto h-full w-[95%] lg:w-[75%] flex flex-col items-center justify-center gap-6 md:gap-10 lg:gap-16  py-10 px-10 rounded-3xl bg-black/20 shadow-black shadow-[0_0_60px_15px_rgba(0,0,0,0.3)]">
         <h2 className="border-l-4 border-teal-500 px-2">À propos de moi</h2>
         <div className="w-full lg:w-[80%] flex flex-col items-center justify-center gap-6 md:gap-10 lg:gap-10">
-          {AboutText.map((text) => (
-            <p className="text-center">{text}</p>
+          {AboutText.map((text, index) => (
+            <p key={index} className="text-center">
+              {text}
+            </p>
           ))}
         </div>
         <h2 className="border-l-4 border-teal-500 px-2">Compétences</h2>
         <IconContext.Provider value={{ color: "white" }}>
           <ul className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-8 gap-4">
-            {Skills.map((Skill) => (
+            {Skills.map((Skill, index) => (
               <li
-                key={Skill.title}
+                key={index}
                 className="p-2 rounded-xl bg-teal-500/20 hover:scale-110 transition-all ease-out duration-300"
               >
                 <Skill.icon

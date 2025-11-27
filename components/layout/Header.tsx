@@ -20,10 +20,10 @@ type NavItemsProps = {
 function NavItems({ mobile = true }: NavItemsProps) {
   return (
     <IconContext.Provider value={{ color: "white", size: "1.5rem" }}>
-      {navLinks.map((link) => {
+      {navLinks.map((link, index) => {
         const Icon = link.icon;
         return (
-          <li key={link.name}>
+          <li key={index}>
             <Link
               href={link.href}
               className={`flex items-center gap-2 ${
@@ -33,7 +33,10 @@ function NavItems({ mobile = true }: NavItemsProps) {
               <Icon></Icon>
               {link.name}
               {!mobile && (
-                <span className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-500"></span>
+                <span
+                  key={index}
+                  className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-500"
+                ></span>
               )}
             </Link>
           </li>
