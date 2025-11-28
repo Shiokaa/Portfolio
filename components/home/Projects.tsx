@@ -58,7 +58,7 @@ export default function Projects() {
             return (
               <li
                 key={project.id}
-                className={`relative w-[350px] md:w-[100px] flex items-center justify-center overflow-hidden rounded-lg transition-all ease-out duration-600 ${
+                className={`relative w-[350px] md:w-[100px] flex items-center justify-center overflow-hidden rounded-lg transition-all ease-out duration-600 cursor-pointer ${
                   currentProject === index
                     ? "h-[280px] md:w-[350px] lg:w-[500px] lg:h-[400px] "
                     : "h-[70px] md:h-[280px] lg:h-[400px]"
@@ -87,7 +87,7 @@ export default function Projects() {
                     {project.name}
                   </h3>
                   {currentProject === index && (
-                    <button className="bg-teal-600 rounded-full px-6 py-1">
+                    <button className="bg-teal-500 rounded-full px-6 py-1 cursor-pointer hover:bg-teal-700 transition-all ease-out duration-300">
                       <Link href={`/projects/${project.id}`}>
                         <span className="text-lg font-bold">
                           Voir le projet
