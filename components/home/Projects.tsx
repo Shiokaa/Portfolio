@@ -10,7 +10,7 @@ export default function Projects() {
   const handleLeftClick = () => {
     setCurrentProject((prev) => {
       if (prev === 0) {
-        return projects.length;
+        return projects.length - 1;
       }
       return prev - 1;
     });
@@ -18,7 +18,7 @@ export default function Projects() {
 
   const handleRightClick = () => {
     setCurrentProject((prev) => {
-      if (prev === projects.length) {
+      if (prev === projects.length - 1) {
         return 0;
       }
       return prev + 1;
