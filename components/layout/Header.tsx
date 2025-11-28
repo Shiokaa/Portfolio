@@ -6,49 +6,16 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineWorkOutline, MdOutlineContactPage } from "react-icons/md";
 import { IconContext } from "react-icons";
 
-const navLinks = [
-  { name: "Accueil", href: "/", icon: IoHomeOutline },
-  { name: "À propos", href: "#about", icon: FaRegUser },
-  { name: "Projets", href: "#projects", icon: MdOutlineWorkOutline },
-  { name: "CV", href: "/resume", icon: MdOutlineContactPage },
-];
-
-type NavItemsProps = {
-  mobile?: boolean;
-};
-
-function NavItems({ mobile = true }: NavItemsProps) {
-  return (
-    <IconContext.Provider value={{ color: "white", size: "1.5rem" }}>
-      {navLinks.map((link, index) => {
-        const Icon = link.icon;
-        return (
-          <li key={index}>
-            <Link
-              href={link.href}
-              className={`flex items-center gap-2 ${
-                mobile ? "" : "group relative w-max"
-              }`}
-            >
-              <Icon></Icon>
-              {link.name}
-              {!mobile && (
-                <span
-                  key={index}
-                  className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-500"
-                ></span>
-              )}
-            </Link>
-          </li>
-        );
-      })}
-    </IconContext.Provider>
-  );
-}
-
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const navLinks = [
+    { name: "Accueil", href: "/", icon: IoHomeOutline },
+    { name: "À propos", href: "#about", icon: FaRegUser },
+    { name: "Projets", href: "#projects", icon: MdOutlineWorkOutline },
+    { name: "CV", href: "/resume", icon: MdOutlineContactPage },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +29,41 @@ export default function Header() {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  type NavItemsProps = {
+    mobile?: boolean;
+  };
+
+  function NavItems({ mobile = true }: NavItemsProps) {
+    return (
+      <IconContext.Provider value={{ color: "white", size: "1.5rem" }}>
+        {navLinks.map((link, index) => {
+          const Icon = link.icon;
+          return (
+            <li key={index}>
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`flex items-center gap-2 ${
+                  mobile ? "" : "group relative w-max"
+                }`}
+              >
+                <Icon></Icon>
+                {link.name}
+                {!mobile && (
+                  <span
+                    key={index}
+                    className="bg-teal-500 h-1 w-0 rounded-full absolute -bottom-1.5 left-0 group-hover:w-full transition-all ease-out duration-500"
+                  ></span>
+                )}
+              </Link>
+            </li>
+          );
+        })}
+      </IconContext.Provider>
+    );
+  }
+
   return (
     <header
       className={`w-full sticky top-0 left-0 z-50 transition-all ease-out duration-300 h-18 lg:h-24 flex items-center justify-center ${
