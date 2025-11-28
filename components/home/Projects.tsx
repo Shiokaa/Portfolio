@@ -54,18 +54,18 @@ export default function Projects() {
           </div>
         </div>
         <ul className="w-full h-full flex flex-col items-center justify-center gap-6 md:flex-row">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             return (
               <li
                 key={project.id}
                 className={`relative w-[350px] md:w-[100px] flex items-center justify-center overflow-hidden rounded-lg transition-all ease-out duration-600 ${
-                  currentProject === project.id - 1
+                  currentProject === index
                     ? "h-[280px] md:w-[350px] lg:w-[500px] lg:h-[400px] "
                     : "h-[70px] md:h-[280px] lg:h-[400px]"
                 }`}
-                onClick={() => setCurrentProject(project.id - 1)}
-                onMouseEnter={() => setCurrentProject(project.id - 1)}
-                onMouseLeave={() => setCurrentProject(project.id - 1)}
+                onClick={() => setCurrentProject(index)}
+                onMouseEnter={() => setCurrentProject(index)}
+                onMouseLeave={() => setCurrentProject(index)}
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center blur-[3px]"
@@ -73,7 +73,7 @@ export default function Projects() {
                 />
                 <div
                   className={
-                    currentProject === project.id - 1
+                    currentProject === index
                       ? "absolute inset-0 bg-black/30"
                       : "absolute inset-0 bg-black/60"
                   }
@@ -81,12 +81,12 @@ export default function Projects() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                   <h3
                     className={`font-bold ${
-                      currentProject === project.id - 1 ? "" : "md:-rotate-90"
+                      currentProject === index ? "" : "md:-rotate-90"
                     }`}
                   >
                     {project.name}
                   </h3>
-                  {currentProject === project.id - 1 && (
+                  {currentProject === index && (
                     <button className="bg-teal-600 rounded-full px-6 py-1">
                       <Link href={`/projects/${project.id}`}>
                         <span className="text-lg font-bold">
