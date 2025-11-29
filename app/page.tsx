@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="w-full h-full flex flex-col items-center justify-center gap-36 lg:gap-66 py-14 lg:py-50">
+      <main className="w-full h-full flex flex-col items-center justify-center gap-36 lg:gap-66 py-24 lg:py-65">
         <Hero />
         <About />
         <Projects />
