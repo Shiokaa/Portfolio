@@ -104,7 +104,7 @@ export default function Header() {
         {/* Navbar mobile */}
         <ul
           className={`absolute top-18 md:top-17 bg-black left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden lg:hidden ${
-            isOpen ? "h-48 " : "h-0"
+            isOpen ? "h-68 " : "h-0"
           }`}
         >
           <NavItems mobile={true} />
