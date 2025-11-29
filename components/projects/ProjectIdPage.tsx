@@ -94,10 +94,10 @@ export default function ProjectIdPage({ id }: { id: number }) {
         {project.description}
         <br />
         <br />
-        <p className="text-lg font-bold ">
+        <span className="text-lg font-bold ">
           Projet réalisé en {project.year} avec{" "}
           {project.technologies.join(", ")}
-        </p>
+        </span>
       </p>
       <div className="flex items-center justify-center gap-6 mt-2">
         <button className="bg-teal-500 rounded-full px-6 py-1 cursor-pointer hover:bg-teal-700 hover:scale-110 transition-all ease-out duration-300">
