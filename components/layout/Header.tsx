@@ -5,6 +5,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { MdOutlineWorkOutline, MdOutlineContactPage } from "react-icons/md";
 import { IconContext } from "react-icons";
+import { FiPhone } from "react-icons/fi";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
     { name: "Accueil", href: "/", icon: IoHomeOutline },
     { name: "À propos", href: "#about", icon: FaRegUser },
     { name: "Projets", href: "#projects", icon: MdOutlineWorkOutline },
+    { name: "Contact", href: "#contact", icon: FiPhone },
     { name: "CV", href: "/resume", icon: MdOutlineContactPage },
   ];
 
