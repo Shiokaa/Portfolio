@@ -13,9 +13,9 @@ export default function Header() {
 
   const navLinks = [
     { name: "Accueil", href: "/", icon: IoHomeOutline },
-    { name: "À propos", href: "#about", icon: FaRegUser },
-    { name: "Projets", href: "#projects", icon: MdOutlineWorkOutline },
-    { name: "Contact", href: "#contact", icon: FiPhone },
+    { name: "À propos", href: "/#about", icon: FaRegUser },
+    { name: "Projets", href: "/#projects", icon: MdOutlineWorkOutline },
+    { name: "Contact", href: "/#contact", icon: FiPhone },
     { name: "CV", href: "/resume", icon: MdOutlineContactPage },
   ];
 
