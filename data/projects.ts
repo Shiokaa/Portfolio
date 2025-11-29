@@ -12,7 +12,7 @@ export const projects = [
     ],
     thumbnail: "/images/projects/groupie_tracker/001.png",
     technologies: ["Golang", "Html", "Css", "Js"],
-    github: "https://github.com/Shiokaa/groupie-tracker",
+    link: "https://github.com/Shiokaa/groupie-tracker",
     year: "2025",
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
     ],
     thumbnail: "/images/projects/forum/001.png",
     technologies: ["Golang", "Html", "Css", "Js", "MySQL"],
-    github: "https://github.com/Shiokaa/forum",
+    link: "https://github.com/Shiokaa/forum",
     year: "2025",
   },
 ];
