@@ -69,10 +69,10 @@ export default function Header() {
   return (
     <header
       className={`w-full sticky top-0 left-0 z-50 transition-all ease-out duration-300 h-18 lg:h-24 flex items-center justify-center ${
-        isScrolled ? "bg-black backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled ? "bg-zinc-950 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <nav className="h-full w-full bg-black lg:bg-transparent py-10 flex items-center justify-around">
+      <nav className="h-full w-full bg-zinc-950 lg:bg-transparent py-10 flex items-center justify-around">
         {/* h1 qui fait office de logo */}
         <Link href="/">
           <span className="text-5xl lg:text-6xl font-[Dancing_Script] text-teal-500">
@@ -103,7 +103,7 @@ export default function Header() {
 
         {/* Navbar mobile */}
         <ul
-          className={`absolute top-18 md:top-17 bg-black left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden lg:hidden ${
+          className={`absolute top-18 md:top-17 bg-zinc-950 left-0 z-50 w-full flex justify-center items-center flex-col gap-6 transition-all ease-out duration-300 overflow-hidden lg:hidden ${
             isOpen ? "h-68 " : "h-0"
           }`}
         >
