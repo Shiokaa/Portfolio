@@ -87,7 +87,7 @@ export default function Projects() {
                     {project.name}
                   </h3>
                   {currentProject === index && (
-                    <button className="bg-teal-500 rounded-full px-6 py-1 cursor-pointer hover:bg-teal-700 transition-all ease-out duration-300">
+                    <button className="bg-teal-500 rounded-full px-6 py-1 cursor-pointer hover:bg-teal-700 hover:scale-110 transition-all ease-out duration-300">
                       <Link href={`/projects/${project.id}`}>
                         <span className="text-lg font-bold">
                           Voir le projet
