@@ -5,12 +5,14 @@ html {
 }
 
 body {
-  @apply min-h-screen w-full;
+  @apply w-full h-full;
   font-family: var(--font-poppins);
   background-color: #00bfa6;
   color: #fff;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 body::before {
