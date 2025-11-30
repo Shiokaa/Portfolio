@@ -1,6 +1,12 @@
+"use client";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ResumePage from "@/components/resume/ResumePage";
+import dynamic from "next/dynamic";
+
+const ResumePage = dynamic(() => import("@/components/resume/ResumePage"), {
+  ssr: false,
+});
 
 export default function Resume() {
   return (
