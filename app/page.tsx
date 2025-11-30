@@ -6,8 +6,21 @@ import Projects from "@/components/home/Projects";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/layout/Footer";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
+
   return (
     <>
       <Header />
