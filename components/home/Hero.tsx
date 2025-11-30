@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="hero w-full h-full flex items-center lg:px-20">
-      <div className="w-full h-full flex flex-col lg:flex-row gap-50 ">
-        <div className="w-full h-1/2 flex flex-col items-center justify-center lg:h-full">
+      <div className="w-full h-full flex flex-col lg:flex-row gap-10 justify-between">
+        <div className="w-full h-1/3 flex flex-col items-center justify-center lg:h-full">
           <div className="flex gap-4 flex-col items-center lg:items-start lg:min-w-[550px]">
             <h1>
               Salut <span className="font-[Dancing_Script]">! 👋</span>
@@ -39,7 +39,7 @@ export default function Hero() {
             height={640}
             quality={100}
             priority
-            className="rounded-2xl relative z-10 w-[250px] h-[250px] lg:w-[300px] lg:h-[320px] object-cover"
+            className="rounded-2xl relative z-10 w-[250px] h-[250px] lg:w-[300px] lg:h-[320px] object-cover shrink-0"
           />
         </div>
       </div>

@@ -11,7 +11,7 @@ interface RevealOnScrollProps {
 
 export default function RevealOnScroll({
   children,
-  className = "",
+  className = "w-full h-full",
   delay = 0,
 }: RevealOnScrollProps) {
   return (
