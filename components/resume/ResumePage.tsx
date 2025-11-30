@@ -1,12 +1,19 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { pdfjs, Document, Page } from "react-pdf";
+import dynamic from "next/dynamic";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-// Configure worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  {
+    ssr: false,
+  }
+);
+const Page = dynamic(() => import("react-pdf").then((mod) => mod.Page), {
+  ssr: false,
+});
 
 export default function ResumePage() {
   const [numPages, setNumPages] = useState<number>(0);
@@ -19,6 +26,12 @@ export default function ResumePage() {
 
   // Update width on resize
   useEffect(() => {
+    // Configure worker dynamically
+    import("react-pdf").then((module) => {
+      const pdfjs = module.pdfjs;
+      pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+    });
+
     function updateWidth() {
       if (containerRef.current) {
         // Subtract padding/margins to ensure no overflow
