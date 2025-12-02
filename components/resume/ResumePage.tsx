@@ -1,11 +1,25 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import dynamic from "next/dynamic";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center h-96 w-full min-w-[300px] bg-white">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500"></div>
+      </div>
+    ),
+  }
+);
+
+const Page = dynamic(() => import("react-pdf").then((mod) => mod.Page), {
+  ssr: false,
+});
 
 export default function ResumePage() {
   const [numPages, setNumPages] = useState<number>(0);
@@ -13,6 +27,13 @@ export default function ResumePage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const pdfPath = "/resume/Amaru_Tom_CV.pdf";
+
+  useEffect(() => {
+    import("react-pdf").then((module) => {
+      const pdfjs = module.pdfjs;
+      pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+    });
+  }, []);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
