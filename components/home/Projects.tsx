@@ -26,7 +26,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="w-full h-full scroll-mt-24">
+    <section id="projects" className="w-full h-full scroll-mt-40">
       <div className="w-full h-full flex flex-col items-center justify-center gap-14">
         <div className="flex items-center justify-around w-full">
           <h2 className="border-b-4 border-teal-500 py-2 px-3 rounded-2xl">

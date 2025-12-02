@@ -31,7 +31,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full h-full scroll-mt-24">
+    <section id="contact" className="w-full h-full scroll-mt-40">
       <div className="w-full h-full flex flex-col items-center justify-center gap-6">
         <div className="w-[95%] h-full flex flex-col items-center justify-center gap-12">
           <h2 className="border-b-4 border-teal-500 py-2 px-3 rounded-2xl">
