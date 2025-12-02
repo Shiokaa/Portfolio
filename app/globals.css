@@ -7,7 +7,6 @@ html {
 body {
   @apply w-full h-full;
   font-family: var(--font-poppins);
-  background-color: #00bfa6;
   color: #fff;
   scroll-behavior: smooth;
   display: flex;
