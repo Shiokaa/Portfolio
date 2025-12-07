@@ -26,7 +26,7 @@ export default function ResumePage() {
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const pdfPath = "/resume/Amaru_Tom_CV.pdf";
+  const pdfPath = "/resume/Amaru_Tom_CV_Freelance.pdf";
 
   useEffect(() => {
     import("react-pdf").then((module) => {
